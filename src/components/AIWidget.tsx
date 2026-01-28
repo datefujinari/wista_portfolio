@@ -12,7 +12,7 @@ export default function AIWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: 'こんにちは！ポートフォリオに関してご質問がございましたら、お気軽にお聞きください。',
+      content: '現在この機能は調整中です。ご利用いただけません。',
       isBot: true,
       timestamp: new Date(),
     },
@@ -119,7 +119,7 @@ export default function AIWidget() {
                   className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
                 >
                   <div
-                    className={`max-w-xs px-4 py-2 rounded-2xl text-sm ${
+                    className={`max-w-xs px-4 py-2 rounded-2xl text-sm whitespace-pre-wrap ${
                       message.isBot
                         ? 'bg-primary-100 text-primary-800'
                         : 'bg-primary-800 text-white'

@@ -139,52 +139,17 @@ export default function About() {
       </Head>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
-                <span className="text-gradient">About Me</span>
-              </h1>
-              <p className="text-xl text-primary-600 mb-6 leading-relaxed">
-                プログラミングだけでなく、溶接や機械加工など、モノ作りが好きなエンジニアです。
-              </p>
-              <div className="space-y-4 text-primary-700">
-                <p>
-                  趣味でアプリ開発やモノづくりをしています。生成AIを活用して新たなチャレンジをしています。
-                </p>
-                <p>
-                  企業でのプログラミング経験は浅いですが、機械学習、インフラ、の経験も少々あり、幅広い知識を持っています。
-                  また、製造業での画像判定ロボットのプロジェクトの経験もあり、様々な分野での経験を活かせます。
-                </p>
-                <p>
-                  高度な技術を多くの人へ提供し、
-                  人々の生活をより豊かにすることが私の使命だと考えています。
-                </p>
-              </div>
-            </div>
-            <div className="animate-slide-in-right">
-              <div className="card">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary-800">3+</div>
-                    <div className="text-sm text-primary-600">年の経験</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary-800">15+</div>
-                    <div className="text-sm text-primary-600">プロジェクト</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary-800">5+</div>
-                    <div className="text-sm text-primary-600">研究発表</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary-800">10+</div>
-                    <div className="text-sm text-primary-600">技術スタック</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section className="py-20 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/bg.jpg)' }}>
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="text-white">About Me</span>
+            </h1>
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-8">
+              プログラミングだけでなく、溶接や機械加工など、モノ作りが好きなエンジニアです。
+              趣味でアプリ開発やモノづくりをしています。生成AIを活用して新たなチャレンジをしています。
+            </p>
           </div>
         </div>
       </section>
@@ -341,7 +306,7 @@ export default function About() {
               <a href="/contact" className="btn-primary">
                 お問い合わせ
               </a>
-              <a href="/projects" className="btn-secondary">
+              <a href="/works" className="btn-secondary">
                 プロジェクトを見る
               </a>
             </div>

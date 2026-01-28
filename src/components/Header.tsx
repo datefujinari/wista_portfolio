@@ -5,11 +5,11 @@ import { useRouter } from 'next/router'
 import { Menu, X } from 'lucide-react'
 
 const navigation = [
-  { name: 'ホーム', href: '/' },
-  { name: 'プロジェクト', href: '/projects' },
-  { name: '記事', href: '/research' },
-  { name: '自己紹介', href: '/about' },
-  { name: 'お問い合わせ', href: '/contact' },
+  { name: 'HOME', href: '/' },
+  { name: 'ABOUT', href: '/about' },
+  { name: 'SKILLS', href: '/skills' },
+  { name: 'WORKS', href: '/works' },
+  { name: 'CONTACT', href: '/contact' },
 ]
 
 export default function Header() {
@@ -41,8 +41,8 @@ export default function Header() {
           <div className="flex lg:flex-1">
             <Link href="/" className="group">
               <Image
-                src="/wista_logo.png"
-                alt="WISTA Logo"
+                src="/namelogo.png"
+                alt="Name Logo"
                 width={120}
                 height={40}
                 className="hover:scale-105 transition-transform duration-200"

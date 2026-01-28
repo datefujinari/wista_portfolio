@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
-type ProjectCategory = 'All' | 'AI' | 'Mobile' | 'IoT'
+type ProjectCategory = 'All' | 'AI' | 'Mobile' | 'Tools' | 'IoT'
 
 interface Project {
   id: string
@@ -11,13 +11,13 @@ interface Project {
   longDescription: string
   category: ProjectCategory
   technologies: string[]
-  status: 'Completed' | 'In Progress' | 'Planning'
+  status: '完了' | '進行中' | '未着手'
   githubUrl?: string
   demoUrl?: string
   imageUrl?: string
 }
 
-export default function Projects() {
+export default function Works() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('All')
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -29,60 +29,60 @@ export default function Projects() {
       longDescription: 'Transformerアーキテクチャを使用した日本語対応のチャットボット。感情分析、意図理解、コンテキスト保持機能を実装。',
       category: 'AI',
       technologies: ['Python', 'TensorFlow', 'React', 'Node.js', 'MongoDB'],
-      status: 'Completed',
+      status: '完了',
       githubUrl: 'https://github.com/example/ai-chatbot',
       demoUrl: 'https://demo.example.com/chatbot',
     },
     {
       id: '2',
-      title: 'IoTデータ可視化',
-      description: 'リアルタイムセンサーデータの分析・可視化システム',
-      longDescription: 'AWSを活用したスケーラブルなIoTデータパイプライン。リアルタイム処理、異常検知、機械学習による予測分析機能を搭載。',
-      category: 'IoT',
-      technologies: ['Python', 'AWS IoT', 'DynamoDB', 'React', 'D3.js'],
-      status: 'Completed',
+      title: 'スマートフォン向けタスク管理アプリ',
+      description: 'iOS向けのタスク管理アプリケーション',
+      longDescription: '詳細は後で修正します。',
+      category: 'Mobile',
+      technologies: ['Swift', 'SwiftUI', 'Firebase'],
+      status: '進行中',
       githubUrl: 'https://github.com/example/iot-dashboard',
       demoUrl: 'https://demo.example.com/iot',
     },
     {
       id: '3',
-      title: 'AR画像認識アプリ',
-      description: '深層学習による画像認識技術を活用したモバイルアプリ',
-      longDescription: 'CNNを使用したリアルタイム物体検出とAR表示機能。教育分野での活用を想定した学習支援アプリケーション。',
-      category: 'Mobile',
-      technologies: ['React Native', 'TensorFlow Lite', 'ARCore', 'Python'],
-      status: 'In Progress',
+      title: 'ログ監視・アラート自動化ツール',
+      description: 'ログデータを監視し、異常を検知してアラートを自動化するツール',
+      longDescription: 'セキュリティ運用の自動化を支援し、現場の負荷を下げるためのツール',
+      category: 'Tools',
+      technologies: ['Tomcat', 'Apache', 'Java', 'Python'],
+      status: '進行中',
       githubUrl: 'https://github.com/example/ar-recognition',
     },
     {
       id: '4',
-      title: 'スマートホーム制御システム',
-      description: 'IoTデバイスと機械学習を組み合わせた自動化システム',
-      longDescription: '住環境データの学習による自動制御システム。エネルギー効率化と快適性の最適化を実現。',
+      title: 'OD対策薬管理システム',
+      description: 'OD対策のために、一定自時間毎に薬のロックを解除するシステム',
+      longDescription: 'スマートホンと連携をして、薬の管理と管理の記録、緊急の時に薬のロックを解除するシステム',
       category: 'IoT',
-      technologies: ['Python', 'Raspberry Pi', 'MQTT', 'scikit-learn', 'React'],
-      status: 'In Progress',
+      technologies: ['Flutter', 'Firebase', 'Dart', 'Python', 'Arduino'],
+      status: '進行中',
       githubUrl: 'https://github.com/example/smart-home',
     },
     {
       id: '5',
-      title: '音声感情認識システム',
-      description: '音声データから感情を分析するマルチモーダルAIシステム',
-      longDescription: '音声の特徴量抽出と深層学習による感情分類。リアルタイム処理と高精度の感情認識を実現。',
+      title: 'Embedding型チャットボット',
+      description: 'OpenAIのAPIを使用したEmbedding型チャットボット',
+      longDescription: '質問とサイト内情報の類似度を計算、最も近い回答を返す',
       category: 'AI',
-      technologies: ['Python', 'PyTorch', 'librosa', 'FastAPI', 'React'],
-      status: 'Completed',
+      technologies: ['Python', 'JavaScript', 'MySQL', 'OpenAI API'],
+      status: '未着手',
       githubUrl: 'https://github.com/example/emotion-recognition',
       demoUrl: 'https://demo.example.com/emotion',
     },
     {
       id: '6',
-      title: 'タスク管理PWA',
-      description: 'AI推薦機能付きのプログレッシブウェブアプリ',
-      longDescription: 'ユーザー行動の学習による intelligent な task scheduling。オフライン対応とリアルタイム同期機能。',
-      category: 'Mobile',
-      technologies: ['Next.js', 'PWA', 'TensorFlow.js', 'Firebase', 'TypeScript'],
-      status: 'Planning',
+      title: 'ToDoアプリ',
+      description: '職業訓練時制作課題',
+      longDescription: 'Javaの実習課題でToDoアプリを制作しました。',
+      category: 'Tools',
+      technologies: ['Java', 'Tomcat', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
+      status: '完了',
       githubUrl: 'https://github.com/example/task-pwa',
     },
   ]
@@ -103,11 +103,11 @@ export default function Projects() {
 
   const getStatusColor = (status: Project['status']) => {
     switch (status) {
-      case 'Completed':
+      case '完了':
         return 'bg-green-100 text-green-800'
-      case 'In Progress':
+      case '進行中':
         return 'bg-blue-100 text-blue-800'
-      case 'Planning':
+      case '未着手':
         return 'bg-yellow-100 text-yellow-800'
       default:
         return 'bg-gray-100 text-gray-800'
@@ -130,18 +130,19 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Portfolio</title>
+        <title>Works - Portfolio</title>
         <meta name="description" content="AI、IoT、モバイルアプリケーション開発プロジェクトの一覧" />
       </Head>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/bg.jpg)' }}>
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
-              <span className="text-gradient">Projects</span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="text-white">Works</span>
             </h1>
-            <p className="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-8">
               AI・機械学習・IoT・モバイルアプリケーション開発プロジェクトをご紹介します。
               研究から実用化まで、幅広い技術領域での取り組みをご覧ください。
             </p>
@@ -340,4 +341,4 @@ export default function Projects() {
       </section>
     </>
   )
-} 
+}

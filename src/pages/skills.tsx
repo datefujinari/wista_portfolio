@@ -14,7 +14,7 @@ interface ResearchProject {
   githubUrl?: string
 }
 
-export default function Research() {
+export default function Skills() {
   const researchProjects: ResearchProject[] = [
     {
       id: '1',
@@ -124,18 +124,19 @@ export default function Research() {
   return (
     <>
       <Head>
-        <title>Research - Portfolio</title>
+        <title>Skills - Portfolio</title>
         <meta name="description" content="AI・機械学習・自然言語処理分野での研究活動と成果をご紹介" />
       </Head>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-subtle">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/bg.jpg)' }}>
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
-              <span className="text-gradient">Research</span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="text-white">Skills</span>
             </h1>
-            <p className="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-100 max-w-3xl mx-auto mb-8">
               AI・機械学習・自然言語処理分野での研究活動をご紹介します。
               学術研究から産業応用まで、幅広い研究テーマに取り組んでいます。
             </p>
@@ -332,4 +333,4 @@ export default function Research() {
       </section>
     </>
   )
-} 
+}

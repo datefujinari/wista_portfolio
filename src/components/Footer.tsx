@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { Github, Twitter, Instagram, Mail } from 'lucide-react'
 
 const navigation = [
-  { name: 'ホーム', href: '/' },
-  { name: 'プロジェクト', href: '/projects' },
-  { name: '研究', href: '/research' },
-  { name: '自己紹介', href: '/about' },
-  { name: 'お問い合わせ', href: '/contact' },
+  { name: 'HOME', href: '/' },
+  { name: 'ABOUT', href: '/about' },
+  { name: 'SKILLS', href: '/skills' },
+  { name: 'WORKS', href: '/works' },
+  { name: 'CONTACT', href: '/contact' },
 ]
 
 const socialLinks = [
@@ -22,40 +22,18 @@ export default function Footer() {
   return (
     <footer className="bg-primary-50 border-t border-primary-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* ブランド */}
-          <div className="space-y-4">
-            <Image src="/wista_logo.png" alt="WISTA Logo" width={120} height={40} className="hover:scale-105 transition-transform duration-200" priority/>
-            <p className="text-sm text-primary-600 max-w-sm">
-              AIとテクノロジーで未来を創造する。研究とエンジニアリングの融合を通じて、より良い世界の実現を目指します。
-            </p>
-          </div>
-
-          {/* ナビゲーション */}
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-primary-800 uppercase tracking-wider">
-              サイトマップ
-            </h4>
-            <ul className="space-y-2">
-              {navigation.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-primary-600 hover:text-primary-800 transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div className="flex flex-col items-center space-y-6">
+          {/* ロゴ */}
+          <div className="flex justify-center">
+            <Image src="/namelogo.png" alt="Name Logo" width={120} height={40} className="hover:scale-105 transition-transform duration-200" priority/>
           </div>
 
           {/* ソーシャルリンク */}
-          <div className="space-y-4">
+          <div className="flex flex-col items-center space-y-4">
             <h4 className="text-sm font-semibold text-primary-800 uppercase tracking-wider">
               SNS
             </h4>
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               {socialLinks.map((item) => {
                 const IconComponent = item.icon
                 return (
@@ -67,7 +45,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                   >
                     <span className="sr-only">{item.name}</span>
-                    <IconComponent className="h-5 w-5" />
+                    <IconComponent className="h-7 w-7" />
                   </a>
                 )
               })}
